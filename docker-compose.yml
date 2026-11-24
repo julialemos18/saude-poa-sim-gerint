@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: saude_db
+    environment:
+      POSTGRES_USER: saude
+      POSTGRES_PASSWORD: saude123
+      POSTGRES_DB: saude_poa
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
